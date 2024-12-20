@@ -1,5 +1,5 @@
 
-import java.math.BigDecimal;
+
 import java.sql.*;
         import java.util.Scanner;
 
@@ -21,7 +21,7 @@ public class AccountManager {
         String security_pin = scanner.nextLine();
 
         try {
-            connection.setAutoCommit(false);
+             connection.setAutoCommit(false);
             if(account_number != 0) {
                 PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Accounts WHERE account_number = ? and security_pin = ? ");
                 preparedStatement.setLong(1, account_number);
